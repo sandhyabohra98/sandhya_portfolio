@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandhya Bohra | Digital Marketing Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #f9f6f0;
+            --bg-card: #ffffff;
+            --text-dark: #231f20;
+            --text-muted: #5c5552;
+            --rust-orange: #c85a32;
+            --warm-tan: #e8d8c8;
+            --navy-blue: #1d3557;
+            --border-color: #e2d7cd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--rust-orange);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rust-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-main) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--warm-tan);
+            color: var(--rust-orange);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--rust-orange);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #a84622;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--warm-tan);
+            transform: translateY(-2px);
+        }
+
+        /* Numbers / Metrics Bar */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--rust-orange);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* General Section Styles */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 28px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .project-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+            background-color: #eef2f7;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-stats {
+            background-color: var(--bg-main);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .project-stats ul {
+            list-style: none;
+        }
+
+        .project-stats li {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-box h4 {
+            color: var(--rust-orange);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-box ul {
+            list-style-type: square;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .skill-box li {
+            margin-bottom: 6px;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background-color: var(--navy-blue);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            color: #d1d5db;
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .contact-item a:hover {
+            background: var(--rust-orange);
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .metrics-bar {
+                grid-template-columns: 1fr;
+            }
+            .contact-details {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SANDHYA BOHRA</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <span class="hero-tag">Digital Marketing Intern & Fresher</span>
+                    <h1>Data-Driven Marketing Powered by Economics & Analytics[cite: 13]</h1>
+                    <p>I combine analytical insights from my Economics background with modern digital marketing strategies[cite: 13]. Currently looking for an internship or entry-level role in performance marketing, SEO, and paid media[cite: 13].</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View Practical Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="metrics-bar">
+                        <div class="metric-item">
+                            <span class="metric-number">50+</span>
+                            <span class="metric-label">Keywords Researched[cite: 13]</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">5+</span>
+                            <span class="metric-label">Dummy Ad Campaigns Built[cite: 13]</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">10+</span>
+                            <span class="metric-label">Content Plans Drafted[cite: 13]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Practical Learning & Projects</h2>
+            <p class="section-subtitle">Real hands-on practice projects built during training to simulate agency-level client work[cite: 13].</p>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <span class="project-badge">Meta Ads & Paid Media</span>
+                    <h3>Meta Ads Campaign Architecture</h3>
+                    <p>Designed dummy ad structures focusing on audience targeting, conversion objectives, and ad copy formats in Meta Ads Manager[cite: 13].</p>
+                    <div class="project-stats">
+                        <ul>
+                            <li>• Built 3 Audience Personas for precise targeting</li>
+                            <li>• Created 5 sample ad creative formats</li>
+                            <li>• Practiced ROAS & CTR optimization logic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <span class="project-badge">SEO & Web Strategy</span>
+                    <h3>Keyword Research & Optimization</h3>
+                    <p>Executed end-to-end keyword mapping and competitor search analysis for organic search visibility[cite: 13].</p>
+                    <div class="project-stats">
+                        <ul>
+                            <li>• Analyzed 50+ high-intent search keywords</li>
+                            <li>• Classified keywords by Search Intent (Informational vs Commercial)</li>
+                            <li>• Planned page heading structures (H1, H2)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <span class="project-badge">Social Media & Copywriting</span>
+                    <h3>Social Media Content Strategy</h3>
+                    <p>Developed structured content pillars and posting schedules tailored for educational brand awareness on LinkedIn[cite: 13].</p>
+                    <div class="project-stats">
+                        <ul>
+                            <li>• Created 4 distinct Content Pillars</li>
+                            <li>• Designed 10+ educational post outlines</li>
+                            <li>• Applied English Lit copywriting principles[cite: 13]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <span class="project-badge">Web Development</span>
+                    <h3>Agency Website (WordPress & Elementor)</h3>
+                    <p>Building a practice agency website to demonstrate layout design, conversion placements, and clean UX[cite: 13].</p>
+                    <div class="project-stats">
+                        <ul>
+                            <li>• Custom landing page layout design[cite: 13]</li>
+                            <li>• Mobile-responsive optimization[cite: 18]</li>
+                            <li>• Clear Call-to-Action (CTA) placements[cite: 18]</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills Section -->
+    <section id="skills" class="section" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Skills developed through degree coursework at Kumaun University and structured training at Tutedude[cite: 13].</p>
+
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>Paid Media</h4>
+                    <ul>
+                        <li>Meta Ads Manager[cite: 13]</li>
+                        <li>Google Ads Concepts[cite: 13]</li>
+                        <li>Audience Segmentation[cite: 16]</li>
+                        <li>A/B Testing Logic[cite: 22]</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>SEO & Analytics</h4>
+                    <ul>
+                        <li>Keyword Research[cite: 13]</li>
+                        <li>Google Analytics (GA4)[cite: 13]</li>
+                        <li>Search Intent Analysis[cite: 13]</li>
+                        <li>Performance Metrics[cite: 13]</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Content & Web</h4>
+                    <ul>
+                        <li>WordPress & Elementor[cite: 13]</li>
+                        <li>Copywriting[cite: 13]</li>
+                        <li>LinkedIn Marketing[cite: 13]</li>
+                        <li>Email Campaign Concepts[cite: 13]</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Education & Strengths</h4>
+                    <ul>
+                        <li>B.A. Literature & Economics[cite: 13]</li>
+                        <li>Digital Marketing (Tutedude)[cite: 13]</li>
+                        <li>Data Interpretation[cite: 13]</li>
+                        <li>English, Hindi, French[cite: 13]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Ready to Contribute to Your Marketing Team</h2>
+                <p>I am actively seeking internship and entry-level digital marketing roles[cite: 13]. Let's connect!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <a href="mailto:sandhyabohra98@gmail.com">Email Sandhya</a>[cite: 13]
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://linkedin.com/in/sandhya-bohra-81024a42a" target="_blank">LinkedIn Profile</a>[cite: 13]
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+919105451241">Call: +91 9105451241</a>[cite: 13]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Sandhya Bohra | Digital Marketing Portfolio. Hosted on GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
